@@ -1,0 +1,47 @@
+.mainDiv{
+    display: flex; 
+    flex-wrap: wrap;
+ }
+ .btn-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 0.2fr));
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3999da;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 200px;
+    font-family: 'Arial', sans-serif;
+}
+@media screen and (min-width: 1920px) {
+    .mainDiv {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .card {
+      margin: 10px;
+    }
+  }
+  
+
+ 
