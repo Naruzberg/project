@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styled from './News.scss';
 
 export const News = () => {
   const [mynews, setMyNews] = useState([]);
@@ -33,6 +34,7 @@ export const News = () => {
         <button className='button' onClick={() => handleCategoryChange('technology')}>Technology</button>
       </div>
       <div className='mainDiv'>
+
         {mynews.map((ele) => {
           return (
             <div key={ele.title} className="card" style={{ width: "450px", height: "500px", marginLeft: "2rem" }}>
