@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from './News.scss';
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 export const News = () => {
   const [mynews, setMyNews] = useState([]);
   const [category, setCategory] = useState('general');
@@ -25,28 +29,28 @@ export const News = () => {
     <>
       <h1>See the latest News</h1>
       <div className="btn-group">
-        <button className='button' onClick={() => handleCategoryChange('general')}>General</button>
-        <button className='button' onClick={() => handleCategoryChange('business')}>Business</button>
-        <button className='button' onClick={() => handleCategoryChange('entertainment')}>Entertainment</button>
-        <button className='button' onClick={() => handleCategoryChange('health')}>Health</button>
-        <button className='button' onClick={() => handleCategoryChange('science')}>Science</button>
-        <button className='button' onClick={() => handleCategoryChange('sports')}>Sports</button>
-        <button className='button' onClick={() => handleCategoryChange('technology')}>Technology</button>
+        <Button onClick={() => handleCategoryChange('general')}>General</Button>
+        <Button onClick={() => handleCategoryChange('business')}>Business</Button>
+        <Button onClick={() => handleCategoryChange('entertainment')}>Entertainment</Button>
+        <Button onClick={() => handleCategoryChange('health')}>Health</Button>
+        <Button onClick={() => handleCategoryChange('science')}>Science</Button>
+        <Button onClick={() => handleCategoryChange('sports')}>Sports</Button>
+        <Button onClick={() => handleCategoryChange('technology')}>Technology</Button>
       </div>
       <div className='mainDiv'>
 
         {mynews.map((ele) => {
           return (
-            <div key={ele.title} className="card" style={{ width: "450px", height: "500px", marginLeft: "2rem" }}>
-              <img src={ele.urlToImage || "https://avatars.mds.yandex.net/i?id=bd034476185271f9a0c130f7a60dc379571bd096-11444350-images-thumbs&n=13"} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{ele.author}</h5>
-                <p className="card-text">{ele.title}</p>
-                <a href={ele.url} target="_blank" className="btn btn-primary">
+            <Card key={ele.title} className="card" style={{ width: "450px", height: "500px", marginLeft: "2rem" }}>
+              <Card.Img src={ele.urlToImage || "https://avatars.mds.yandex.net/i?id=bd034476185271f9a0c130f7a60dc379571bd096-11444350-images-thumbs&n=13"}  alt="..." />
+              <Card.Body className="card-body">
+                <Card.Title >{ele.author}</Card.Title>
+                <Card.Text >{ele.title}</Card.Text>
+                <Button href={ele.url} target="_blank" className="btn btn-primary">
                   Read More
-                </a>
-              </div>
-            </div>
+                </Button>
+              </Card.Body>
+            </Card>
           );
         })}
       </div>
